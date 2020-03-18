@@ -1,17 +1,13 @@
 CXX = clang++
 CXXFLAGS = -std=c++11 -stdlib=libc++
-LDFLAGS = -lstdc++
+LDFLAGS = -lstdc++ -lglfw -framework Cocoa -framework OpenGL -framework IOKit
 CFLAGS = -Wall -Weffc++ -Werror -pedantic -g
-
-ADD_LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lsfml-network -lpthread -framework OpenGL
-SRC_DIR = ./
-SRC_LIST = $(wildcard $(SRC_DIR)/*.cpp)
-OBJ_LIST = $(SRC_LIST:.cpp=.o)
+OBJ_LIST = main.o glad.o
 
 all: main
 
 main: $(OBJ_LIST)
-	$(CXX) $(CFLAG) -o $@ $^ $(LDFLAGS) $(ADD_LDFLAGS)
+	$(CXX) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 .PHONY: clean
 clean:
