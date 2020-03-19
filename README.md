@@ -9,7 +9,7 @@ Code from [learnopengl.com](learnopengl.com) tutorials
 - [X] [Creating a window](https://learnopengl.com/Getting-started/Creating-a-window)
 - [X] [Hello Window](https://learnopengl.com/Getting-started/Hello-Window)
 - [X] [Hello Triangle](https://learnopengl.com/Getting-started/Hello-Triangle)
-- [ ] [Shaders](https://learnopengl.com/Getting-started/Shaders)
+- [X] [Shaders](https://learnopengl.com/Getting-started/Shaders)
 - [ ] [Textures](https://learnopengl.com/Getting-started/Textures)
 - [ ] [Transformations](https://learnopengl.com/Getting-started/Textures)
 - [ ] [Coordinate Systems](https://learnopengl.com/Getting-started/Coordinate-Systems)
