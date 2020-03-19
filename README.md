@@ -10,6 +10,7 @@ Code from [learnopengl.com](learnopengl.com) tutorials
 - [X] [Hello Window](https://learnopengl.com/Getting-started/Hello-Window)
 - [X] [Hello Triangle](https://learnopengl.com/Getting-started/Hello-Triangle)
 - [X] [Shaders](https://learnopengl.com/Getting-started/Shaders)
+![shader](images/shader.png)
 - [ ] [Textures](https://learnopengl.com/Getting-started/Textures)
 - [ ] [Transformations](https://learnopengl.com/Getting-started/Textures)
 - [ ] [Coordinate Systems](https://learnopengl.com/Getting-started/Coordinate-Systems)
