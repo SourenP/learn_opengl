@@ -1,5 +1,5 @@
 # learn_opengl
-Code from [learnopengl.com](learnopengl.com) tutorials
+Code written while doing [learnopengl.com](learnopengl.com) tutorials.
 
 ## Run
 
