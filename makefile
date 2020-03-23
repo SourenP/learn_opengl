@@ -1,4 +1,5 @@
 CXX = clang++
+INC_DIR = include
 CXXFLAGS = -std=c++11 -stdlib=libc++
 LDFLAGS = -lstdc++ -lglfw -framework Cocoa -framework OpenGL -framework IOKit
 CFLAGS = -Wall -Weffc++ -Werror -pedantic -g

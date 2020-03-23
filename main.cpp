@@ -2,9 +2,11 @@
 
 #include <GLFW/glfw3.h>
 
-#include "include/shader.h"
-
 #define STB_IMAGE_IMPLEMENTATION
+#include "include/glm/glm.hpp"
+#include "include/glm/gtc/matrix_transform.hpp"
+#include "include/glm/gtc/type_ptr.hpp"
+#include "include/shader.h"
 #include "include/stb_image.h"
 
 #include <fstream>
@@ -127,6 +129,16 @@ void setup_shaders() {
     shader->setInt("texture2", 1);                                // or with shader class
 }
 
+// apply transfomrations
+void apply_trans() {
+    glm::mat4 trans = glm::mat4(1.0f);
+    trans = glm::scale(trans, glm::vec3(0.5, 0.5, 0.5));
+    trans = glm::translate(trans, glm::vec3(0.5f, -0.5f, 0.0f));
+    trans = glm::rotate(trans, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+    unsigned int transformLoc = glGetUniformLocation(shader->ID, "transform");
+    glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
+}
+
 int main() {
     // glfw: initialize and configure
     glfwInit();
@@ -173,6 +185,7 @@ int main() {
 
         // render container
         shader->use();
+        apply_trans();
         glBindVertexArray(VAO);
         glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
@@ -184,6 +197,9 @@ int main() {
     // optional: de-allocate all resources once they've outlived their purpose:
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
+
+    // deallocated shader
+    delete shader;
 
     // glfw: terminate, clearing all previously allocated GLFW resources.
     glfwTerminate();
