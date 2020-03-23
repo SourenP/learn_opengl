@@ -1,6 +1,12 @@
 # learn_opengl
 Code from [learnopengl.com](learnopengl.com) tutorials
 
+## Run
+
+```
+make && ./main
+```
+
 ## Tutorials
 
 ### Getting started

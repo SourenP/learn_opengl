@@ -1,9 +1,8 @@
 CXX = clang++
-INC_DIR = include
 CXXFLAGS = -std=c++11 -stdlib=libc++
 LDFLAGS = -lstdc++ -lglfw -framework Cocoa -framework OpenGL -framework IOKit
 CFLAGS = -Wall -Weffc++ -Werror -pedantic -g
-OBJ_LIST = main.o glad.o
+OBJ_LIST = src/main.o include/glad.o
 
 all: main
 

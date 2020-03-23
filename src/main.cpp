@@ -3,11 +3,11 @@
 #include <GLFW/glfw3.h>
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "include/glm/glm.hpp"
-#include "include/glm/gtc/matrix_transform.hpp"
-#include "include/glm/gtc/type_ptr.hpp"
-#include "include/shader.h"
-#include "include/stb_image.h"
+#include "../include/glm/glm.hpp"
+#include "../include/glm/gtc/matrix_transform.hpp"
+#include "../include/glm/gtc/type_ptr.hpp"
+#include "../include/shader.h"
+#include "../include/stb_image.h"
 
 #include <fstream>
 #include <iostream>
@@ -91,7 +91,8 @@ void setup_textures() {
     // load image, create texture and generate mipmaps
     int width, height, nrChannels;
     stbi_set_flip_vertically_on_load(true);
-    unsigned char* data = stbi_load("assets/container.jpg", &width, &height, &nrChannels, 0);
+    unsigned char* data =
+        stbi_load("assets/textures/container.jpg", &width, &height, &nrChannels, 0);
     if (data) {
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
         glGenerateMipmap(GL_TEXTURE_2D);
@@ -110,7 +111,7 @@ void setup_textures() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     // load image, create texture and generate mipmaps
-    data = stbi_load("assets/awesomeface.png", &width, &height, &nrChannels, 0);
+    data = stbi_load("assets/textures/awesomeface.png", &width, &height, &nrChannels, 0);
     if (data) {
         // note that the awesomeface.png has transparency and thus an alpha channel, so make sure to
         // tell OpenGL the data type is of GL_RGBA
@@ -123,7 +124,7 @@ void setup_textures() {
 }
 
 void setup_shaders() {
-    shader = new Shader("vert.glsl", "frag.glsl");
+    shader = new Shader("assets/shaders/vert.glsl", "assets/shaders/frag.glsl");
     shader->use();
     glUniform1i(glGetUniformLocation(shader->ID, "texture1"), 0); // set it manually
     shader->setInt("texture2", 1);                                // or with shader class
