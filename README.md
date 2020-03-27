@@ -23,5 +23,5 @@ make && ./main
   - ![transform](images/transform.png)
 - [X] [Coordinate Systems](https://learnopengl.com/Getting-started/Coordinate-Systems)
   - ![coordinate](images/coordinate.png)
-- [ ] [Camera](https://learnopengl.com/Getting-started/Camera)
-- [ ] [Review](https://learnopengl.com/Getting-started/Review)
+- [X] [Camera](https://learnopengl.com/Getting-started/Camera)
+  - ![camera](images/camera.gif)
